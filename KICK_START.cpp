@@ -7,8 +7,10 @@ void solve()
     cin >> s;
     ll ans = 0, ck = 0;
     for (int i = 0; i < s.size(); ++i) {
+        //Finds KICK, remembers how many KICK's it has found.
         if (s.substr(i, 4) == "KICK")
             ++ck;
+        //Finds START, any will add any KICK's found to that point to the current answer.
         if (s.substr(i, 5) == "START")
             ans += ck;
     }
